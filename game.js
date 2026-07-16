@@ -609,6 +609,7 @@ function loop(ts) {
       lockPiece();
     }
   }
+  if (gameOver || paused) return; // no redibujar ni reprogramar si terminó/pausó
   draw();
   animId = requestAnimationFrame(loop);
 }
