@@ -25,6 +25,16 @@
   --btn-hover-bg: #9bbdff;
   --switch-bg: #22223a;
   --switch-knob: #7aa2f7;
+  --table-border: #2a2a3a;
+  --table-header-color: #555570;
+  --table-row-alt: rgba(255, 255, 255, 0.03);
+  --highlight-bg: rgba(122, 162, 247, 0.22);
+  --highlight-border: #7aa2f7;
+  --input-bg: #1a1a25;
+  --input-border: #3a3a5a;
+  --secondary-btn-bg: transparent;
+  --secondary-btn-color: #888;
+  --secondary-btn-border: #3a3a5a;
 }
 
 [data-theme="light"] {
@@ -48,6 +58,16 @@
   --btn-hover-bg: #5b78e5;
   --switch-bg: #c8c8dc;
   --switch-knob: #3b5bdb;
+  --table-border: #d8d8e4;
+  --table-header-color: #8888a0;
+  --table-row-alt: rgba(0, 0, 0, 0.03);
+  --highlight-bg: rgba(59, 91, 219, 0.14);
+  --highlight-border: #3b5bdb;
+  --input-bg: #ffffff;
+  --input-border: #c8c8dc;
+  --secondary-btn-bg: transparent;
+  --secondary-btn-color: #666677;
+  --secondary-btn-border: #c8c8dc;
 }
 
 body {
@@ -267,6 +287,123 @@ kbd {
 
 #restart-btn:hover {
   background: var(--btn-hover-bg);
+}
+
+/* ---- Highscores ---- */
+.highscores-section {
+  margin-top: 20px;
+  width: 100%;
+  align-items: stretch;
+}
+
+.highscores-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+}
+
+.highscores-table th,
+.highscores-table td {
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--table-border);
+}
+
+.highscores-table th {
+  color: var(--table-header-color);
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.highscores-table td {
+  color: var(--fg);
+}
+
+.highscores-table tbody tr:nth-child(even) {
+  background: var(--table-row-alt);
+}
+
+.highscores-table tr.highscore-current {
+  background: var(--highlight-bg);
+  outline: 1px solid var(--highlight-border);
+  outline-offset: -1px;
+  font-weight: 700;
+}
+
+.highscores-empty {
+  text-align: center !important;
+  color: var(--label-color);
+  font-style: italic;
+}
+
+.highscores-summary {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--label-color);
+}
+
+.secondary-btn {
+  margin-top: 10px;
+  align-self: flex-start;
+  background: var(--secondary-btn-bg);
+  color: var(--secondary-btn-color);
+  border: 1px solid var(--secondary-btn-border);
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.secondary-btn:hover {
+  color: var(--fg);
+  background: var(--table-row-alt);
+}
+
+/* ---- Name entry (overlay) ---- */
+.name-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+#player-name-input {
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 14px;
+  color: var(--fg);
+  text-align: center;
+  width: 160px;
+}
+
+#name-entry .label {
+  color: var(--overlay-title-color);
+}
+
+#overlay-highscores {
+  width: 100%;
+  max-width: 320px;
+}
+
+.overlay-box .highscores-table {
+  font-size: 11px;
+}
+
+.overlay-box .highscores-table th,
+.overlay-box .highscores-table td {
+  padding: 4px 6px;
+}
+
+.hidden {
+  display: none !important;
 }
 
 /* ---- Menú de pausa ---- */

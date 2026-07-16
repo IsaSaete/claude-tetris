@@ -67,10 +67,50 @@
       </aside>
     </div>
 
+    <div class="panel-section highscores-section">
+      <span class="label">RECORDS</span>
+      <table class="highscores-table" id="highscores-table-start">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Puntos</th>
+            <th>Líneas</th>
+            <th>Combo</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <p class="highscores-summary" id="highscores-summary-start"></p>
+      <button id="reset-highscores-btn" class="secondary-btn">Resetear records</button>
+    </div>
+
     <div id="overlay" class="overlay hidden">
       <div class="overlay-box">
         <p id="overlay-title">GAME OVER</p>
         <p id="overlay-score"></p>
+
+        <div id="overlay-highscores" class="hidden">
+          <div id="name-entry" class="name-entry hidden">
+            <label for="player-name-input" class="label">¡Nuevo récord! Nombre</label>
+            <input type="text" id="player-name-input" maxlength="10" autocomplete="off" />
+            <button id="save-highscore-btn">Guardar</button>
+          </div>
+
+          <table class="highscores-table" id="highscores-table-end">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Nombre</th>
+                <th>Puntos</th>
+                <th>Líneas</th>
+                <th>Combo</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+          <p class="highscores-summary" id="highscores-summary-end"></p>
+        </div>
 
         <div id="pause-menu" class="pause-menu hidden">
           <button id="resume-btn" class="menu-btn">Reanudar</button>
